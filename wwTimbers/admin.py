@@ -6,7 +6,7 @@ from models import (
 
 
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('path', 'title', 'group',)
+    list_display = ('title', 'group',)
     search_fields = ('title',)
 
 

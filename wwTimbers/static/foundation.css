@@ -10,7 +10,13 @@ body {
   font-size: 100%; }
 
 body {
-  background: white;
+  background-image: url('../static/backgrounds/woodbackground.jpg');
+/*  if small background image :*/
+/*  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
   color: #222222;
   padding: 0;
   margin: 0;
@@ -20,6 +26,14 @@ body {
   line-height: 1;
   position: relative; }
 
+#mainBody {
+  background-image: url('../static/backgrounds/paper.png');
+  box-shadow: 0px 2px 0px 0px #888888;
+  outline: #519dd3 thick;
+  /*border-radius: 25px;*/
+  padding: 15px;
+}
+
 a:focus {
   outline: none; }
 
@@ -28,6 +42,29 @@ object,
 embed {
   max-width: 100%;
   height: auto; }
+
+#slideshow {
+  margin: 10px auto;
+  position: relative;
+  width: 700px;
+  height: 450px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  padding-bottom:
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#slideshow img {
+  width: 680px;
+  height: 430px;
+}
 
 object,
 embed {

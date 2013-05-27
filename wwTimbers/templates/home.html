@@ -2,49 +2,31 @@
 
 {% block title %} W.W. Timbers &middot; Home {% endblock %}
 
-<!-- Header -->
-{% block header %}
-    <hr>
-    <h1> This is where the title info will go </h1>
-    <hr>
+{% block top_content %}
+<div id="slideshow">
+    {% load staticfiles %}
+    {% for image in images %}
+    <div>
+        <img border="0" src="{{STATIC_URL}}images/{{image.group}}/{{image.title}}"alt="image Broken">
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
-<!-- End Header -->
-
-<!-- Content -->
-{% block main_content %}
-    <hr>
-    <div class="large-3 columns">
-        <ul>
-            <li>History</li>
-            <li>GLU-LAM/Decking</li>
-            <li>Solid Timbers</li>
-            <li>Outdoor Structures</li>
-            <li>Crane Pads</li>
-            <li>Repair Work</li>
-            <li>Brochure</li>
-            <li>Contact Us!</li>
-
-        </ul>
-    </div>
-    <div class="large-9 columns">
-        <p> This is the main Content </p>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <h4>Welcome to W. W. Timbers, Inc...</h4>
-            <br />
-            <br />
-            <p>
-                Serving the Entire Midwest and East Coast for over 25 years.  If you’re considering laminated or heavy timber construction for your project, call us.
-            </p>
-        </div>
-    </div>
+{% block bot_content %}
+<br />
+<h4>Welcome to W. W. Timbers, Inc...</h4>
+<br />
+<br />
+<p>
+    Serving the Entire Midwest and East Coast for over 25 years.  If you’re considering laminated or heavy timber construction for your project, call us.
+</p>
+<br />
+<p>
+    As fabricators and installers of custom glu-lam and structural timbers, W. W. Timbers, Inc., has a diverse history of completed jobs ranging from foot bridges, private residences, restaurants & religious structures, to golf clubhouses, swimming pool covers, gazebos, decorative trellises, train stations, vehicular bridges, libraries, salt storage domes, indoor water parks, noise walls, and many more.
+</p>
+<br />
+<p>
+    W. W. Timbers is committed to superior quality work.  As an Associate Member of the American Institute of Timber Construction, we subscribe to the highest standards set in the industry.  Our customers value these high standards and we are confident that quality work and materials have been and will continue to be supplied on all our projects.
+</p>
 {% endblock %}
 <!-- End Content -->
-
-<!-- Footer -->
-{% block footer %}
-    <hr>
-    <p> This is the footer </p>
-{% endblock %}
-<!-- End Footer -->

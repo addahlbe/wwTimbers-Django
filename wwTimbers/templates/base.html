@@ -3,24 +3,85 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}foundation.css">
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}normalize.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+      <script>
+        $(function() {
+
+          $("#slideshow > div:gt(0)").hide();
+
+          setInterval(function() {
+            $('#slideshow > div:first')
+              .fadeOut(1000)
+              .next()
+              .fadeIn(1000)
+              .end()
+              .appendTo('#slideshow');
+          },  3000);
+
+        });
+      </script>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div>
-        {% block header %}
-        {% endblock %}
-    </div>
-    <div class="row">
+    <!-- Main Content -->
+    <div class="row" id="mainBody">
         <div class="large-12 columns">
-            {% block main_content %}
-            {% endblock %}
+            <div class="row">
+                <div class="large-3 columns">
+                    <div class="row">
+                        <img border="0" src="{{STATIC_URL}}logos/logo.png"alt="image Broken">
+                    </div>
+                    <div class="row" style="margin-left:15px; margin-top:15px">
+                        <ul style="list-style-type: none;">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/history">History</a></li>
+                            <li>GLU-LAM/Decking</li>
+                            <li>Solid Timbers</li>
+                            <li>Outdoor Structures</li>
+                            <li>Crane Pads</li>
+                            <li>Repair Work</li>
+                            <li>Brochure</li>
+                            <li>Contact Us!</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="large-9 columns">
+                    {% block top_content %}
+                    {% endblock %}
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        {% block bot_content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- End Main Content -->
+
+    <!-- footer -->
+        <div class="row">
+            <div class="large-12 columns" style="padding-bottom: 25px">
+                <hr>
+                <div class="large-3 columns">
+                    <strong>WW.W. Timbers, INC.</strong>
+                </div>
+                <div class="large-3 columns">
+                    <strong>Phone: 708.423.9112</strong>
+                </div>
+                <div class="large-3 columns">
+                    <strong>Fax: 708.423.8855</strong>
+                </div>
+                <div class="large-3 columns">
+                    <strong>e-mail: sales@wwtimbers.com</strong>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-12 columns">
-            {% block footer %}
-            {% endblock %}
-        </div>
-    </div>
+</div>
+    <!-- end footer -->
 </body>
 </html>

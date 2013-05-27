@@ -6,7 +6,7 @@ from django.conf.urls import (
 from django.contrib import admin
 from wwTimbers.views import (
     home,
-    contact,
+    # contact,
     history,
     decking,
     timbers,
@@ -17,14 +17,13 @@ from wwTimbers.views import (
 admin.autodiscover()
 urlpatterns = patterns(
     '',
-    url(r'^home/$', home),
+    url(r'^$', home),
     url(r'^history/$', history),
     url(r'^decking/$', decking),
     url(r'^timbers/$', timbers),
     url(r'^outdoor/$', outdoor),
     url(r'^crane/$', crane),
     url(r'^repair/$', repair),
-    url(r'^contact/$', contact),
-    url(r'^contact/thanks/$', 'contact_thanks.html'),
+    # url(r'^contact/$', contact),
     url(r'^admin/', include(admin.site.urls)),
 )
